@@ -14,8 +14,20 @@ export default {
 </script>
 
 <style>
- .card-lists{
+.card-lists{
   display: flex;
   flex-direction: column;
- }
+}
+
+.card-content-list{
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 7px;
+  width: 243px;
+  box-shadow: 0px 2px 2px #E2E2E2;
+  padding: 5px;
+  min-height: 20px;
+  color: grey;
+  font-size: 15px;
+}
 </style>

@@ -22,8 +22,20 @@ export default {
 </script>
 
 <style>
- .card-contents{
+.card-wrapper{
+  flex-shrink: 0;
+  width: 272px;
+  max-height: max-content;
+  margin-right: 10px;
+  overflow-y: auto;
+}
+
+.card-contents{
   display: flex;
   flex-direction: column;
- }
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
 </style>

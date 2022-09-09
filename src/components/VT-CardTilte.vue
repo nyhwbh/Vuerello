@@ -1,6 +1,6 @@
 <template>
   <div class="card-title">
-    <h2 class="card-content-title">{{title}}</h2>
+    <h3 class="card-content-title">{{title}}</h3>
   </div>
 </template>
 
@@ -14,4 +14,8 @@ export default {
 </script>
 
 <style>
+.card-content-title{
+  margin: 5px 3px 8px 3px;
+  color: grey;
+}
 </style>

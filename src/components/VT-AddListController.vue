@@ -1,14 +1,13 @@
 <template>
   <div class="add-a-card-controller">
     <div class="add-a-card-controller-a">
-      <button class="add-card">+ Add a card</button>
+      <button class="add-card">+ Add another list</button>
     </div>
     <div class="add-a-card-controller-b">
-      <input type="text" placeholder="Enter a title this card...">
+      <input type="text" placeholder="Enter list title...">
       <div class="add-a-card-buttonbox">
         <input type="button" value="Add card">
         <!-- X 아이콘 -->
-        <!-- ... 아이콘 -->
       </div>
     </div>
   </div>
@@ -20,29 +19,37 @@ export default {
 }
 </script>
 
-<style>
-.add-a-card-controller{
-  display: flex;
-  flex-direction: column;
-}
-</style>
-
 <style scoped>
-.add-card{
-  background-color: whitesmoke;
+  .add-a-card-controller{
+    display: flex;
+    flex-direction: column;
+    width: 272px;
+  }
+
+  .add-card{
+  background-color: grey;
   border: 0 solid black;
-  color: grey;
-  height: 27px;
+  border-radius: 5px;
+  color: white;
+  width: 284px;
+  height: 35px;
   font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.add-a-card-controller-b{
+  background-color: whitesmoke;
+  border-radius: 3px;
+  width: 272px;
+  padding: 6px;
 }
 
 .add-a-card-controller-b > input{
-  border: 0 solid black;
+  border: solid cornflowerblue;
   border-radius: 3px;
-  width: 247px;
-  min-height: 70px;
-  box-shadow: 0px 2px 2px #E2E2E2;
-  margin-bottom: 7px;
+  width: 96%;
+  min-height: 35px;
+  margin-bottom: 5px;
   padding-left: 5px;
   text-align: left;
   size: 15px;
