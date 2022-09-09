@@ -1,11 +1,11 @@
 <template>
-  <div class="card-wrapper">
+  <div class="card-wrapper" v-for="(item,idx) in items" :key="idx">
     <div class="card-contents">
       <div class="card-title">
-        <h2 class="card-content-title">To do</h2>
+        <h2 class="card-content-title">{{item.title}}</h2>
       </div>
       <div class="card-lists">
-        <a class="card-content-list">Vue-Go app생성</a>
+        <a class="card-content-list" v-for="(list,idx) in item.lists" :key="idx">{{list}}</a>
         <a class="card-content-list">블록체인 공부하기</a>
         <a class="card-content-list">프로젝트 계획서 쓰기</a>
       </div>
@@ -30,6 +30,7 @@
 export default {
     name: "VTCardWrapper",
     props: {
+      items: Array
     },
 }
 </script>
