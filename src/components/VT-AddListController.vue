@@ -6,8 +6,8 @@
     <div class="add-a-card-controller-b">
       <input type="text" placeholder="Enter list title...">
       <div class="add-a-card-buttonbox">
-        <input type="button" value="Add card">
-        <!-- X 아이콘 -->
+        <input type="button" value="Add list">
+        <i class="fa-solid fa-xmark"></i>
       </div>
     </div>
   </div>
@@ -28,6 +28,7 @@ export default {
 
   .add-card{
   background-color: grey;
+  opacity: 0.6;
   border: 0 solid black;
   border-radius: 5px;
   color: white;
@@ -63,5 +64,11 @@ export default {
   color: white;
   width: 30%;
   height: 35px;
+}
+
+.fa-xmark{
+  margin-left: 10px;
+  color: grey;
+  size: 25px;
 }
 </style>

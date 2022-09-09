@@ -38,6 +38,7 @@ export default {
 
 <style>
 .board{
+  background-color: burlywood;
   display: flex;
   flex-direction: row;
   padding:10px;
