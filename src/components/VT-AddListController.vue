@@ -1,13 +1,15 @@
 <template>
   <div class="add-a-card-controller">
     <div class="add-a-card-controller-a">
-      <button class="add-card">+ Add another list</button>
+      <button class="add-input-box">+ Add another list</button>
     </div>
     <div class="add-a-card-controller-b">
       <input type="text" placeholder="Enter list title...">
       <div class="add-a-card-buttonbox">
-        <input type="button" value="Add list">
-        <i class="fa-solid fa-xmark"></i>
+        <input type="button" value="Add list" class="add-card" name="add-card">
+        <span class="close-add-card">
+          <i class="fa-solid fa-xmark close-add-card"></i>
+        </span>
       </div>
     </div>
   </div>
@@ -20,13 +22,17 @@ export default {
 </script>
 
 <style scoped>
-  .add-a-card-controller{
-    display: flex;
-    flex-direction: column;
-    width: 272px;
-  }
+.add-a-card-controller-a{
+  display: block;
+} 
 
-  .add-card{
+.add-a-card-controller{
+  display: flex;
+  flex-direction: column;
+  width: 272px;
+}
+
+.add-input-box{
   background-color: grey;
   opacity: 0.6;
   border: 0 solid black;
@@ -39,6 +45,7 @@ export default {
 }
 
 .add-a-card-controller-b{
+  display: block;
   background-color: whitesmoke;
   border-radius: 3px;
   width: 272px;

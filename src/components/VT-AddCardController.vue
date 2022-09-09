@@ -1,15 +1,17 @@
 <template>
   <div class="add-a-card-controller">
     <div class="add-a-card-controller-a">
-      <button class="add-card">+ Add a card</button>
+      <button class="add-input-box">+ Add a card</button>
     </div>
     <div class="add-a-card-controller-b">
       <input type="text" placeholder="Enter a title this card...">
       <div class="add-a-card-buttonbox">
-        <span class="card-add-button">
-          <input type="button" value="Add card">
-          <i class="fa-solid fa-xmark"></i>
-        </span>
+        <div class="card-add-button">
+          <input class="add-card" type="button" value="Add card">
+          <span class="close-add-card">
+            <i class="fa-solid fa-xmark close-add-card"></i>
+          </span>
+        </div>
         <span class="card-options">
           <i class="fa-solid fa-ellipsis"></i>
         </span>
@@ -32,12 +34,21 @@ export default {
 </style>
 
 <style scoped>
-.add-card{
+.add-a-card-controller-a{
+  display: block;
+} 
+
+.add-input-box{
   background-color: whitesmoke;
   border: 0 solid black;
   color: grey;
   height: 27px;
   font-size: 15px;
+}
+
+.add-a-card-controller-b{
+  display: block;
+  flex-shrink: 0;
 }
 
 .add-a-card-controller-b > input{
@@ -59,18 +70,13 @@ export default {
   justify-content: space-between;
 }
 
-.card-add-button{
-  flex-shrink: 0;
-  width: 85%;
-}
-
-
-.card-add-button > input{
+.add-card{
   border: 0 solid black;
   border-radius: 3px;
   background-color: cornflowerblue;
   color: white;
-  width: 30%;
+  flex-shrink: 0;
+  width: 70px;
   height: 35px;
 }
 
