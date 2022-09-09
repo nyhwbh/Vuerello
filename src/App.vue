@@ -17,11 +17,11 @@ export default {
       board:[
         {
         title:"To do",
-        lists:["Vue-Go app생성","블록체인 공부하기","프로젝트 계획서 쓰기"]
+        lists:["Vue-Go app생성","블록체인 공부하기","프로젝트 계획서 쓰기","점심먹기","저녁먹기"]
       },
       {
         title:"Doing",
-        lists:["Vue-Go app생성","블록체인 공부하기","프로젝트 계획서 쓰기"]
+        lists:["Vue-Go app 코딩","프론트 익히기"]
       },
       {
         title:"Done",
