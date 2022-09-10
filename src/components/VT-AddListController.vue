@@ -3,7 +3,7 @@
     <div class="add-a-card-controller-a">
       <button class="add-input-box">+ Add another list</button>
     </div>
-    <div class="add-a-card-controller-b">
+    <div class="add-a-card-controller-b-hidden">
       <input type="text" placeholder="Enter list title...">
       <div class="add-a-card-buttonbox">
         <input type="button" value="Add list" class="add-card" name="add-card">
@@ -22,6 +22,10 @@ export default {
 </script>
 
 <style scoped>
+.add-a-card-controller-a-hidden{
+  display: none;
+}
+
 .add-a-card-controller-a{
   display: block;
 } 
@@ -42,6 +46,10 @@ export default {
   height: 35px;
   font-size: 15px;
   margin-bottom: 5px;
+}
+
+.add-a-card-controller-b-hidden{
+  display: none;
 }
 
 .add-a-card-controller-b{

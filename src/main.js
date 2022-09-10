@@ -13,8 +13,9 @@ for(var it=0; it<titleDrags.length; it++){
     var titleDrag = titleDrags[it];
 
     titleDrag.addEventListener('click', () => {
+        console.log(it)
         console.log("clicked");
-    });
+    },false);
 }
 
 // list drag events
@@ -24,6 +25,7 @@ for(var il=0; il<listDrags.length; il++){
     var listDrag = listDrags[il];
 
     listDrag.addEventListener('click', () => {
+        console.log(il)
         console.log("clicked");
     });
 }
@@ -31,22 +33,35 @@ for(var il=0; il<listDrags.length; il++){
 // add a card button events
 const AddButtons = document.getElementsByClassName('add-a-card-controller-a')
 
-for(var iab=0; iab<AddButtons.length; iab++){
-    var AddButton = AddButtons[iab];
+var inputBoxOpen = function(idx){
+    const AddButtons = document.getElementsByClassName('add-a-card-controller-a')
+    const InputAppers = document.getElementsByClassName('add-a-card-controller-b-hidden')
 
-    AddButton.addEventListener('click', () => {
-        console.log("clicked");
-    });
+    console.log("the inputBoxOpen fuction is running")
+    AddButtons[idx].className='add-a-card-controller-a-hidden'
+    InputAppers[idx].className='add-a-card-controller-b'
 }
+
+var inputBoxClose = function(idx){
+    const AddButtons = document.getElementsByClassName('add-a-card-controller-a-hidden')
+    const InputAppers = document.getElementsByClassName('add-a-card-controller-b')
+
+    console.log("the inputBoxClose fuction is running")
+    AddButtons[idx].className='add-a-card-controller-a'
+    InputAppers[idx].className='add-a-card-controller-b-hidden'
+}
+
+AddButtons[0].addEventListener('click',() => {
+    inputBoxOpen(0), false
+})
 
 // add card, add list button events
 const AddCardButtons = document.getElementsByClassName('add-card')
-console.log(AddCardButtons)
 
 for(var iclb=0; iclb<AddCardButtons.length; iclb++){
     var AddCardButton = AddCardButtons[iclb];
-    console.log(AddButton)
     AddCardButton.addEventListener('click', () => {
+        console.log(iclb);
         console.log("clicked");
     });
 }
@@ -54,10 +69,14 @@ for(var iclb=0; iclb<AddCardButtons.length; iclb++){
 // quit add card button events
 const closeButtons = document.getElementsByClassName('close-add-card')
 
-for(var icb=0; icb<closeButtons.length; icb++){
-    var closeButton = closeButtons[icb];
+closeButtons[0].addEventListener('click', () => {
+    inputBoxClose(0),false
+})
 
-    closeButton.addEventListener('click', () => {
-        console.log("clicked");
-    });
-}
+
+
+// ***** 수정할 것
+// className이 계속 바뀌기 때문에 값을 지정해서 테스트하는 경우 
+// 오류가 발생
+
+// 관련한 알고리즘 작성하여 오류 해결 및 JS controller 작성하기

@@ -3,7 +3,7 @@
     <div class="add-a-card-controller-a">
       <button class="add-input-box">+ Add a card</button>
     </div>
-    <div class="add-a-card-controller-b">
+    <div class="add-a-card-controller-b-hidden">
       <input type="text" placeholder="Enter a title this card...">
       <div class="add-a-card-buttonbox">
         <div class="card-add-button">
@@ -34,6 +34,10 @@ export default {
 </style>
 
 <style scoped>
+.add-a-card-controller-a-hidden{
+  display: none;
+}
+
 .add-a-card-controller-a{
   display: block;
 } 
@@ -44,6 +48,10 @@ export default {
   color: grey;
   height: 27px;
   font-size: 15px;
+}
+
+.add-a-card-controller-b-hidden{
+  display: none;
 }
 
 .add-a-card-controller-b{
