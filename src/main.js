@@ -33,27 +33,41 @@ for(var il=0; il<listDrags.length; il++){
 // add a card button events
 const AddButtons = document.getElementsByClassName('add-a-card-controller-a')
 
-var inputBoxOpen = function(idx){
-    const AddButtons = document.getElementsByClassName('add-a-card-controller-a')
-    const InputAppers = document.getElementsByClassName('add-a-card-controller-b-hidden')
-
-    console.log("the inputBoxOpen fuction is running")
-    AddButtons[idx].className='add-a-card-controller-a-hidden'
-    InputAppers[idx].className='add-a-card-controller-b'
+for(var ib=0; ib<AddButtons.length; ib++ ){
+    console.log("for loop "+ ib)
+    console.log(AddButtons.item(ib))
+    AddButtons.item(ib).addEventListener('click',(events) => {
+        console.log(events)
+        var controllerA = events.path[0].childNodes[0]
+        var controllerB = events.path[0].childNodes[0]
+        if (events.path.length === 10){
+            controllerA = events.path[1].childNodes[0]
+            controllerB = events.path[1].childNodes[1]
+        } else {
+            controllerA = events.path[2].childNodes[0]
+            controllerB = events.path[2].childNodes[1]
+        }
+        inputBoxOpen(controllerA,controllerB)
+    })
 }
 
-var inputBoxClose = function(idx){
-    const AddButtons = document.getElementsByClassName('add-a-card-controller-a-hidden')
-    const InputAppers = document.getElementsByClassName('add-a-card-controller-b')
 
-    console.log("the inputBoxClose fuction is running")
-    AddButtons[idx].className='add-a-card-controller-a'
-    InputAppers[idx].className='add-a-card-controller-b-hidden'
+var inputBoxOpen = function(AddDisapper,InputAppers){
+    //켜져있는 다른 inputbox 끄기
+    const addAppers=document.getElementsByClassName('add-a-card-controller-a-hidden')
+    const InputDisapper = document.getElementsByClassName('add-a-card-controller-b')
+    if(addAppers.length !== 0){
+        addAppers[0].className='add-a-card-controller-a'
+        InputDisapper[0].className='add-a-card-controller-b-hidden'
+        //클릭한 inputbox 열기            
+        AddDisapper.className='add-a-card-controller-a-hidden'
+        InputAppers.className='add-a-card-controller-b'
+    }else{
+    // Add a card click 입력받기
+    AddDisapper.className='add-a-card-controller-a-hidden'
+    InputAppers.className='add-a-card-controller-b'
+    }
 }
-
-AddButtons[0].addEventListener('click',() => {
-    inputBoxOpen(0), false
-})
 
 // add card, add list button events
 const AddCardButtons = document.getElementsByClassName('add-card')
@@ -68,15 +82,14 @@ for(var iclb=0; iclb<AddCardButtons.length; iclb++){
 
 // quit add card button events
 const closeButtons = document.getElementsByClassName('close-add-card')
+for(var icb=0; icb<closeButtons.length; icb++){
 
-closeButtons[0].addEventListener('click', () => {
-    inputBoxClose(0),false
-})
-
-
-
-// ***** 수정할 것
-// className이 계속 바뀌기 때문에 값을 지정해서 테스트하는 경우 
-// 오류가 발생
-
-// 관련한 알고리즘 작성하여 오류 해결 및 JS controller 작성하기
+    closeButtons[icb].addEventListener('click', () => {
+        const addAppers=document.getElementsByClassName('add-a-card-controller-a-hidden')
+        const InputDisapper = document.getElementsByClassName('add-a-card-controller-b')
+        if(addAppers.length !== 0){
+            addAppers[0].className='add-a-card-controller-a'
+            InputDisapper[0].className='add-a-card-controller-b-hidden'
+        }
+    })
+}
