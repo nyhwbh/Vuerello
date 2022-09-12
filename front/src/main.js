@@ -3,20 +3,22 @@ import '@fortawesome/fontawesome-free/js/all.js'
 import { createApp } from 'vue'
 import App from './App.vue'
 
+import { addCardController } from './controllers/addcardandListController/addcardandListController'
+import {switchTitleInput, changeTitle} from './controllers/titleController/titleChange'
 import {openInputBox, closeInputBox} from './controllers/inputBoxController/inputBoxController'
 
 createApp(App).mount('#app')
 
 
 // title drag events
-const titleDrags = document.getElementsByClassName('card-title');
+const titleDrags = document.getElementsByClassName('card-content-title');
 
 for(var it=0; it<titleDrags.length; it++){
     var titleDrag = titleDrags[it];
 
-    titleDrag.addEventListener('click', () => {
+    titleDrag.addEventListener('mousedown', () => {
         console.log(it)
-        console.log("clicked");
+        console.log("mouse down now");
     },false);
 }
 
@@ -32,18 +34,12 @@ for(var il=0; il<listDrags.length; il++){
     });
 }
 
+// change title event
+switchTitleInput()
+changeTitle()
 
 // add card, add list button events
-const AddCardButtons = document.getElementsByClassName('add-card')
-
-for(var iclb=0; iclb<AddCardButtons.length; iclb++){
-    AddCardButtons[iclb].addEventListener('click', (events) => {
-        console.log(events)
-        const valueInput = events.path[3].childNodes[0].value
-        events.path[3].childNodes[0].value = null
-        console.log(valueInput);
-    });
-}
+addCardController()
 
 // inputBoxController
 openInputBox()
