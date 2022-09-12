@@ -31,5 +31,6 @@ export default {
   flex-direction: row;
   padding:10px;
   overflow-x:auto ;
+  height: 96vh;
 }
 </style>

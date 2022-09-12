@@ -6,7 +6,7 @@ const closeButtons = document.getElementsByClassName('close-add-card')
 // input 박스 켜기
 export const openInputBox = () => {
     for(var i=0; i<AddButtons.length; i++ ){
-        AddButtons.item(i).addEventListener('click',(events) => {
+        AddButtons[i].addEventListener('click',(events) => {
             var controllerA = events.path[0].childNodes[0]
             var controllerB = events.path[0].childNodes[0]
             if (events.path.length === 10){
