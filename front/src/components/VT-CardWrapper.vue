@@ -1,8 +1,8 @@
 <template>
   <div class="card-wrapper" v-for="(item,idx) in items" :key="idx">
     <div class="card-contents">
-      <VTCardTilte :title="item.title"/>
-      <VTCardLists :items="item.lists"/>
+      <VTCardTilte :list="item.list"/>
+      <VTCardLists :cards="item.cards"/>
       <VTAddCardController />
     </div>
   </div>

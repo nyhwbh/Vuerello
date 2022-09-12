@@ -1,7 +1,7 @@
 <template>
   <div class="card-title">
     <span>
-      <h3 class="card-content-title">{{title}}</h3>
+      <h3 class="card-content-title">{{list}}</h3>
     </span>
     <span>
       <i class="fa-solid fa-ellipsis"></i>
@@ -13,7 +13,7 @@
 export default {
     name: "VTCardTitle",
     props: {
-      title:String
+      list:String
     },
 }
 </script>
