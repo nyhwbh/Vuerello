@@ -4,7 +4,7 @@
       <button class="add-input-box">+ Add a card</button>
     </div>
     <div class="add-a-card-controller-b-hidden">
-      <input type="text" placeholder="Enter a title this card...">
+      <input type="text" placeholder="Enter a title this card..." id="add-card-in-list">
       <div class="add-a-card-buttonbox">
         <div class="card-add-button">
           <input class="add-card" type="button" value="Add card">

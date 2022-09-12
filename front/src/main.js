@@ -37,10 +37,11 @@ for(var il=0; il<listDrags.length; il++){
 const AddCardButtons = document.getElementsByClassName('add-card')
 
 for(var iclb=0; iclb<AddCardButtons.length; iclb++){
-    var AddCardButton = AddCardButtons[iclb];
-    AddCardButton.addEventListener('click', () => {
-        console.log(iclb);
-        console.log("clicked");
+    AddCardButtons[iclb].addEventListener('click', (events) => {
+        console.log(events)
+        const valueInput = events.path[3].childNodes[0].value
+        events.path[3].childNodes[0].value = null
+        console.log(valueInput);
     });
 }
 

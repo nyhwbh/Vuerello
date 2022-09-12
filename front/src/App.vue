@@ -14,7 +14,7 @@ export default {
   components: {
     VTCardWrapper,
     VTAddListController
-},
+  },
   data() {
     return{
       board:[
