@@ -4,7 +4,7 @@
       <button class="add-input-box">+ Add a card</button>
     </div>
     <div class="add-a-card-controller-b-hidden">
-      <textarea  id="add-card-in-list">Enter a title for this card...</textarea>  
+      <textarea  id="add-card-in-list" placeholder="Enter a title for this card..."></textarea>  
       <div class="add-a-card-buttonbox">
         <div class="card-add-button">
           <input class="add-card" type="button" value="Add card">
