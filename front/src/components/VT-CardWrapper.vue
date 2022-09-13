@@ -1,8 +1,8 @@
 <template>
-  <div class="card-wrapper" v-for="(item,idx) in items" :key="idx">
+  <div class="card-wrapper" v-for="(items,idx) in boards" :key="idx">
     <div class="card-contents">
-      <VTCardTilte :list="item.list"/>
-      <VTCardLists :cards="item.cards"/>
+      <VTCardTilte :listTi="items.listTitle"/>
+      <VTCardLists :cardsLt="items.listCards"/>
       <VTAddCardController />
     </div>
   </div>
@@ -15,7 +15,7 @@ import VTAddCardController from './VT-AddCardController.vue';
 export default {
     name: "VTCardWrapper",
     props: {
-        items: Array
+        boards: Array
     },
     components: { VTCardTilte, VTCardLists, VTAddCardController }
 }

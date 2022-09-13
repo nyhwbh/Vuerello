@@ -1,14 +1,69 @@
 [
-    {
-    "list":"To do",
-    "cards":["Vue-Go app 생성","Go로 Server 구성 및 Json 처리하기","블록체인 공부하기","블록체인 프로젝트 계획서 쓰기","OOP, MVC 공부하기", "저녁 약속"]
-  },
   {
-    "list":"Doing",
-    "cards":["Vue-Go app 프론트 코딩","프론트 익히기","json 데이터 만들기"]
-  },
-  {
-    "list":"Done",
-    "cards":["청소하기","아침먹기","점심먹기", "Git 등록하기"]
+    "boardName" : "test",
+    "boardLists": [
+      {
+        "listTitle":"To do",
+        "listCards":[
+          {
+            "cardTitle" :"Vue-Go app 생성",
+            "cardDetail" : "Vue app 생성및 Go app 생성 후 연결"
+          },
+          {
+            "cardTitle" : "Go로 Server 구성 및 Json 처리하기",
+            "cardDetail" : ""
+          },
+          {
+            "cardTitle" : "블록체인 공부하기",
+            "cardDetail" : ""
+          },
+          {
+            "cardTitle" : "블록체인 프로젝트 계획서 쓰기",
+            "cardDetail" : ""
+          },
+          { 
+            "cardTitle" : "OOP, MVC 공부하기", 
+            "cardDetail" : ""
+          },
+          { 
+            "cardTitle" : "저녁 약속",
+            "cardDetail" : ""
+          }
+        ]
+      },
+      {
+        "listTitle":"Doing",
+        "listCards":[
+          {
+            "cardTitle" : "Vue-Go app 프론트 코딩",
+            "cardDetail" : ""
+          },
+          {  
+            "cardTitle" : "프론트 익히기",
+            "cardDetail" : ""
+          },
+          { 
+            "cardTitle" : "json 데이터 만들기",
+            "cardDetail" : ""
+          }
+        ]
+      },
+      {
+        "listTitle":"Done",
+        "listCards":[
+          {
+            "cardTitle" : "청소하기",
+            "cardDetail" : "아침먹기"
+          },
+          { "cardTitle" : "점심먹기",
+            "cardDetail" : ""
+          },
+          {
+            "cardTitle" : "Git 등록하기",
+            "cardDetail" : ""
+          }
+        ]
+      }
+    ]
   }
 ]

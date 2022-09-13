@@ -2,10 +2,10 @@
   <div class="card-title">
     <div class="card-title-controller-box">
       <span class="card-title-controller-a">
-        <h3 class="card-content-title">{{list}}</h3>
+        <h3 class="card-content-title">{{listTi}}</h3>
       </span>
       <span class="card-title-controller-b-hide">
-        <textarea class="list-name-change" :value="list"></textarea>
+        <textarea class="list-name-change" :value="listTi"></textarea>
       </span>
     </div>
     <span>
@@ -18,7 +18,7 @@
 export default {
     name: "VTCardTitle",
     props: {
-      list:String
+      listTi:String
     },
 }
 

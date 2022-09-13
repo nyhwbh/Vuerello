@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-    <VTCardWrapper :items="board"/>
+    <VTCardWrapper :boards="board[0].boardLists"/>
     <VTAddListController />
   </div>
 </template>
@@ -10,6 +10,8 @@ import VTCardWrapper from "./components/VT-CardWrapper.vue"
 import VTAddListController from "./components/VT-AddListController.vue";
 import todoData from "../../back/data/todoData.json"
 
+const board = todoData
+
 export default {
   name: 'App',
   components: {
@@ -18,7 +20,7 @@ export default {
   },
   data() {
     return{
-      board: todoData
+      board
     }
   }
 }

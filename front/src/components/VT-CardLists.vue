@@ -1,6 +1,6 @@
 <template>
   <div class="card-lists">
-    <a class="card-content-list" v-for="(list,idx) in cards" :key="idx">{{list}}</a>
+    <a class="card-content-list" v-for="(list,idx) in cardsLt" :key="idx">{{list.cardTitle}}</a>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
     name: "VTCardLists",
     props: {
-      cards: Array
+      cardsLt: Array
     },
 }
 </script>
