@@ -1,3 +1,5 @@
+import {inputBoxClose} from '../inputBoxController/inputBoxController.js'
+
 const titleClick = document.getElementsByClassName('card-title-controller-box')
 const textareaValue = document.getElementsByClassName('list-name-change')
 
@@ -5,7 +7,7 @@ const textareaValue = document.getElementsByClassName('list-name-change')
 export const switchTitleInput = () => {
     for(var i=0; i<titleClick.length; i++){
         titleClick[i].addEventListener('click', (events) => {
-            console.log(events)
+            inputBoxClose()
             var controllerA = events.path[2].childNodes[0]
             var controllerB = events.path[2].childNodes[1]
             if (events.path.length === 10) {
@@ -54,7 +56,7 @@ var titleControl = function(disapper, apper){
 }
 
 // input box 종료
-var titleClose = function(){
+export const titleClose = function(){
     const ctrlA = document.getElementsByClassName('card-title-controller-a-hide')
     const ctrlB = document.getElementsByClassName('card-title-controller-b')
     if(ctrlA.length !== 0 ){

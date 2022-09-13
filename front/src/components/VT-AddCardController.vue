@@ -4,7 +4,7 @@
       <button class="add-input-box">+ Add a card</button>
     </div>
     <div class="add-a-card-controller-b-hidden">
-      <textarea  id="add-card-in-list" placeholder="Enter a title for this card..."></textarea>  
+      <textarea  class="add-card-in-list" placeholder="Enter a title for this card..."></textarea>  
       <div class="add-a-card-buttonbox">
         <div class="card-add-button">
           <input class="add-card" type="button" value="Add card">
@@ -62,10 +62,10 @@ export default {
 .add-a-card-controller-b > textarea{
   border: 0 solid black;
   border-radius: 3px;
-  width: 247px;
+  width: 242px;
   min-height: 70px;
   box-shadow: 0px 2px 2px #E2E2E2;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
   padding-left: 7px;
   font-family: sans-serif;
   font-size: 15px;

@@ -6,7 +6,7 @@ import App from './App.vue'
 import {switchTitleInput, changeTitle} from './controllers/titleController/titleChange'
 import { dragTitle } from './controllers/titleController/titleDrag'
 // add event controller
-import { addCardController } from './controllers/addEventController/addEventController'
+import { addCardControllerByClick,addCardControllerByEnter } from './controllers/addEventController/addEventController'
 // input box controller
 import {openInputBox, closeInputBox} from './controllers/inputBoxController/inputBoxController'
 
@@ -34,7 +34,8 @@ switchTitleInput()
 changeTitle()
 
 // add card, add list button events
-addCardController()
+addCardControllerByClick()
+addCardControllerByEnter()
 
 // inputBoxController
 openInputBox()
