@@ -4,9 +4,9 @@
       <button class="add-input-box">+ Add another list</button>
     </div>
     <div class="add-a-card-controller-b-hidden">
-      <input type="text" placeholder="Enter list title...">
+      <textarea class="add-list-value" placeholder="Enter list title..."></textarea>
       <div class="add-a-card-buttonbox">
-        <input type="button" value="Add list" class="add-card" name="add-card">
+        <input type="button" value="Add list" class="add-list-button">
         <span class="close-add-card">
           <i class="fa-solid fa-xmark close-add-card"></i>
         </span>
@@ -60,16 +60,18 @@ export default {
   padding: 6px;
 }
 
-.add-a-card-controller-b > input{
+.add-a-card-controller-b > textarea{
   border: solid cornflowerblue;
   border-radius: 3px;
   width: 96%;
   min-height: 35px;
   margin-bottom: 5px;
   padding-left: 5px;
-  text-align: left;
-  size: 15px;
   color: gray;
+  font-weight: 100;
+  font-size: 15px;
+  font-family: sans-serif;
+  resize: none;
 }
 
 .add-a-card-buttonbox > input{
