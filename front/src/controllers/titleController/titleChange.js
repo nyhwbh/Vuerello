@@ -30,8 +30,6 @@ export const changeTitle = () => {
                 e.preventDefault()
                 var changeTitle = e.path[2].childNodes[0].childNodes[0]
                 var changeTextarea = e.path[0]
-                console.log(changeTitle)
-                console.log(changeTitle.innerText)
                 var changeValue = e.target.value
                 console.log(e.target._value)
                 titleClose()

@@ -3,7 +3,7 @@
     <div class="add-a-card-controller-a">
       <a class="add-input-box">+ Add a card</a>
     </div>
-    <div class="add-a-card-controller-b-hidden">
+    <div class="add-a-card-controller-b-hide">
       <textarea  class="add-card-in-list" placeholder="Enter a title for this card..."></textarea>  
       <div class="add-a-card-buttonbox">
         <div class="card-add-button">
@@ -31,7 +31,7 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.add-a-card-controller-a-hidden{
+.add-a-card-controller-a-hide{
   display: none;
 }
 
@@ -56,7 +56,7 @@ export default {
   font-size: 15px;
 }
 
-.add-a-card-controller-b-hidden{
+.add-a-card-controller-b-hide{
   display: none;
 }
 

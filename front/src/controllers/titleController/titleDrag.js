@@ -1,13 +1,20 @@
-var titleDrags = document.getElementsByClassName('card-content-title');
 
-export const dragTitle = () => {
+export const moveTitle = () => {
+    const titleDrags = document.getElementsByClassName('card-content-title');
 
-    for(var it=0; it<titleDrags.length; it++){
-        var titleDrag = titleDrags[it];
-        
-        titleDrag.addEventListener('mousedown', () => {
-            console.log(it)
+    for(var i=0; i<titleDrags.length; i++){
+        titleDrags[i].addEventListener('mousedown', () => {
             console.log("mouse down now");
-        },false);
+        })
+    }
+}
+
+export const setTitle = () => {
+    const titleDrags = document.getElementsByClassName('card-content-title');
+
+    for(var i=0; i<titleDrags.length; i++){
+        titleDrags[i].addEventListener('mouseup', () => {
+            console.log("mouse up now")
+        })
     }
 }

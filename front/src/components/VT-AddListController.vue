@@ -3,7 +3,7 @@
     <div class="add-a-card-controller-a">
       <button class="add-input-box">+ Add another list</button>
     </div>
-    <div class="add-a-card-controller-b-hidden">
+    <div class="add-a-card-controller-b-hide">
       <textarea class="add-list-value" placeholder="Enter list title..."></textarea>
       <div class="add-a-card-buttonbox">
         <input type="button" value="Add list" class="add-list-button">
