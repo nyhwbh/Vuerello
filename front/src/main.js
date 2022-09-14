@@ -21,10 +21,17 @@ const sendEvents = () => {
         console.log(e)
         console.log(e.path[0]); 
         console.log(e.path[0].className)
-
+        
+        // Add a card  click event
         if(e.path[0].className === 'add-input-box'){            
             openInputBox(e)
         }
+
+        // List title  click event
+        if(e.path[0].className === 'card-content-title'){            
+            switchTitleInput(e)
+        }
+
     })
 }
 
@@ -59,5 +66,4 @@ addListControllerByEnter()
 closeInputBox()
 
 // change title event
-switchTitleInput()
 changeTitle()

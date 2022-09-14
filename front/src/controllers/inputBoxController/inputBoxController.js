@@ -3,12 +3,15 @@ import {titleClose} from "../titleController/titleChange.js"
 
 // input 박스 켜기
 export const openInputBox = (e) => {
-    const AddButtons = document.getElementsByClassName('add-input-box')
-    const controllerA = document.getElementsByClassName('add-a-card-controller-a')
-    const controllerB = document.getElementsByClassName('add-a-card-controller-b-hide')
     //켜져있는 다른 input box 끄기
     inputBoxClose()
     titleClose()
+
+    //타깃 지정 및 이벤트 받기
+    const AddButtons = document.getElementsByClassName('add-input-box')
+    const controllerA = document.getElementsByClassName('add-a-card-controller-a')
+    const controllerB = document.getElementsByClassName('add-a-card-controller-b-hide')
+    
     // 클릭된 위치 찾기
     for(var i=0; i<AddButtons.length; i++){
         console.log(AddButtons[i])

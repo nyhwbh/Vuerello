@@ -1,29 +1,29 @@
 import {inputBoxClose} from '../inputBoxController/inputBoxController.js'
 
-var titleClick = document.getElementsByClassName('card-title-controller-box')
-var textareaValue = document.getElementsByClassName('list-name-change')
 
 //textarea와 h3 변경
-export const switchTitleInput = () => {
-    for(var i=0; i<titleClick.length; i++){
-        titleClick[i].addEventListener('click', (events) => {
-            inputBoxClose()
-            var controllerA = events.path[2].childNodes[0]
-            var controllerB = events.path[2].childNodes[1]
-            if (events.path.length === 11) {
-                controllerA = events.path[0].childNodes[0]
-                controllerB = events.path[0].childNodes[1]
-            }else if (events.path.length === 12) {
-                controllerA = events.path[1].childNodes[0]
-                controllerB = events.path[1].childNodes[1]
-            }
-            titleControl(controllerA,controllerB)
-        })
+export const switchTitleInput = (e) => {
+    //열려있는 inputbox 닫기
+    inputBoxClose()
+    titleClose()
+    
+    const targetClass = document.getElementsByClassName('card-content-title')
+    const controllerA = document.getElementsByClassName('card-title-controller-a')
+    const controllerB = document.getElementsByClassName('card-title-controller-b-hide')
+    for(var i=0; i<targetClass.length; i++){
+        if(e.path[0] === targetClass[i]){
+            var targetIndex = i
+            break
+        }
     }
+    titleControl(controllerA[targetIndex],controllerB[targetIndex])
+    
 }
- 
+
+
 //textarea 입력받기
 export const changeTitle = () => {
+    const textareaValue = document.getElementsByClassName('list-name-change')
     for(var i=0; i<textareaValue.length; i++){
         textareaValue[i].addEventListener('keydown', (e) => {
             if(e.keyCode === 13){
@@ -41,11 +41,6 @@ export const changeTitle = () => {
 
 // h3 -> disapper , textarea -> apper
 var titleControl = function(disapper, apper){
-    //열려있는 input box 끄기
-    const ctrlA = document.getElementsByClassName('card-title-controller-a-hide')
-    if(ctrlA.length !== 0 ){
-        titleClose()
-    }
     //선택한 input box 열기
         disapper.className='card-title-controller-a-hide'
         apper.className='card-title-controller-b'
