@@ -29,9 +29,6 @@ for(var il=0; il<listDrags.length; il++){
     });
 }
 
-// change title event
-switchTitleInput()
-changeTitle()
 
 // add card, add list button events
 addCardControllerByClick()
@@ -42,3 +39,7 @@ addListControllerByEnter()
 // inputBoxController
 openInputBox()
 closeInputBox()
+
+// change title event
+switchTitleInput()
+changeTitle()

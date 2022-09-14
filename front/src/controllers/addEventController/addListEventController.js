@@ -1,5 +1,5 @@
-const AddListButton = document.getElementsByClassName("add-list-button")
-const AddInputValue = document.getElementsByClassName('add-list-value')
+var AddListButton = document.getElementsByClassName("add-list-button")
+var AddInputValue = document.getElementsByClassName('add-list-value')
 
 
 // 리스트 추가 이벤트
@@ -8,7 +8,23 @@ export const addListControllerByClick = () => {
     AddListButton[0].addEventListener('click', (e) => {
         console.log(e)
         console.log("clicked")
-    })
+
+        //입력한 내용 가져오기
+        const valueInput = e.path[2].childNodes[0].value
+
+        // null 입력 막기
+        if( valueInput !== "" ){
+            //내용을 추가할 타겟지정
+            const addTarget = e.path[5].childNodes[0]
+            
+            const makeChild = makeTemplate(valueInput)
+            
+            addTarget.appendChild(makeChild)
+            
+            // 새로운 값을 받을 수 있도록 내용 삭제
+            e.path[2].childNodes[0].value=null
+        }
+        })
 }
 
 // 엔터 방식
@@ -20,14 +36,25 @@ export const addListControllerByEnter = () => {
 
             // 입력한 내용 가져오기
             const valueInput = e.target.value   
-            console.log(valueInput)
-            console.log(e)
 
-            //내용을 추가할 타겟지정
-            const addTarget = e.path[4].childNodes[0]
-            console.log(addTarget)
+            // null 입력 막기
+            if( valueInput !== "" ){
+                //내용을 추가할 타겟지정
+                const addTarget = e.path[4].childNodes[0]
+                
+                const makeChild = makeTemplate(valueInput)
+                
+                addTarget.appendChild(makeChild)
+                
+                // 새로운 값을 받을 수 있도록 내용 삭제
+                e.target.value=null                                     
+            }    
+        }
+    })
+}
 
-            // 내용 추가
+const makeTemplate = (value) => {
+    // 내용 추가
             // wrapper 생성
             var newWrapper = document.createElement('div')
             newWrapper.setAttribute('class', 'card-wrapper')
@@ -50,14 +77,14 @@ export const addListControllerByEnter = () => {
             newTitleControllerA.setAttribute('class','card-title-controller-a')
             var newCardContentTitle = document.createElement('h3')
             newCardContentTitle.setAttribute('class','card-content-title')
-            newCardContentTitle.innerHTML = valueInput
+            newCardContentTitle.innerHTML = value
             newTitleControllerA.appendChild(newCardContentTitle)
             // title control boxB
             var newTitleControllerB = document.createElement('span')
             newTitleControllerB.setAttribute('class','card-title-controller-b-hide')
             var newListNameChange = document.createElement('textarea')
             newListNameChange.setAttribute('class','list-name-change')
-            newListNameChange.setAttribute('value',valueInput)
+            newListNameChange.setAttribute('value',value)
             newTitleControllerB.appendChild(newListNameChange)
             // title control boxA + title control boxB
             newTitleControllerBox.append(newTitleControllerA,newTitleControllerB)
@@ -107,16 +134,18 @@ export const addListControllerByEnter = () => {
             newXMark.setAttribute('class','fa-solid fa-xmark close-add-card')
             newCloseAddCard.appendChild(newXMark)
             // Add-card input + close add card button
-            newAddCardButton.appendChild(newAddCard,newCloseAddCard)
-
+            newAddCardButton.append(newAddCard,newCloseAddCard)
+            
             var newCardOptions = document.createElement('span')
             newCardOptions.setAttribute('class','card-options')
             var newInputEllipsis = document.createElement('i')
             newInputEllipsis.setAttribute('class','fa-solid fa-ellipsis')
             newCardOptions.appendChild(newInputEllipsis)
+            
+            newAddACardButtonBox.append(newAddCardButton,newCardOptions)
 
             // make add-a-card-controller-b
-            newAddACardControllerB.append(newAddCardButton,newCardOptions)
+            newAddACardControllerB.append(newAddCardInList,newAddACardButtonBox)
             
             //make Add Card Box
             newAddACardController.append(newAddACardControllerA,newAddACardControllerB)
@@ -127,10 +156,7 @@ export const addListControllerByEnter = () => {
 
             // wrapper에 내용 넣기
             newWrapper.appendChild(newContent)
-            addTarget.appendChild(newWrapper)
-
-
-            e.target.value=null                                     // 새로운 값을 받을 수 있도록 내용 삭제
-        }
-    })
+            
+            // 완성된 wrapper 반환
+            return newWrapper
 }

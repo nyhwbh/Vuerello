@@ -1,7 +1,7 @@
 import {inputBoxClose} from '../inputBoxController/inputBoxController.js'
 
-const titleClick = document.getElementsByClassName('card-title-controller-box')
-const textareaValue = document.getElementsByClassName('list-name-change')
+var titleClick = document.getElementsByClassName('card-title-controller-box')
+var textareaValue = document.getElementsByClassName('list-name-change')
 
 //textarea와 h3 변경
 export const switchTitleInput = () => {

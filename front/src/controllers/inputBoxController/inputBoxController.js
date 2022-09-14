@@ -1,14 +1,12 @@
 import {titleClose} from "../titleController/titleChange.js"
 
-// Add a card, Add another list 클릭시 input box 생성 및 다른 input box 종료
-const AddButtons = document.getElementsByClassName('add-a-card-controller-a')
-const closeButtons = document.getElementsByClassName('close-add-card')
-
 
 // input 박스 켜기
 export const openInputBox = () => {
+    const AddButtons = document.getElementsByClassName('add-a-card-controller-a')
     for(var i=0; i<AddButtons.length; i++ ){
         AddButtons[i].addEventListener('click',(events) => {
+            console.log(events);
             titleClose()
             var controllerA = events.path[0].childNodes[0]
             var controllerB = events.path[0].childNodes[0]
@@ -26,8 +24,9 @@ export const openInputBox = () => {
 
 // 켜진 input box 종료하기
 export const closeInputBox = () => {
-    for(var icb=0; icb<closeButtons.length; icb++){   
-        closeButtons[icb].addEventListener('click', () => { 
+    const closeButtons = document.getElementsByClassName('close-add-card')
+    for(var i=0; i<closeButtons.length; i++){   
+        closeButtons[i].addEventListener('click', () => { 
         const addAppers=document.getElementsByClassName('add-a-card-controller-a-hidden')
         const InputDisapper = document.getElementsByClassName('add-a-card-controller-b')
         if(addAppers.length !== 0){

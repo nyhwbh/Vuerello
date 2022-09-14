@@ -1,4 +1,4 @@
-const titleDrags = document.getElementsByClassName('card-content-title');
+var titleDrags = document.getElementsByClassName('card-content-title');
 
 export const dragTitle = () => {
 

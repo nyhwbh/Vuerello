@@ -1,5 +1,5 @@
-const AddCardButtons = document.getElementsByClassName('add-card')
-const AddTextareaValue = document.getElementsByClassName('add-card-in-list')
+var AddCardButtons = document.getElementsByClassName('add-card')
+var AddTextareaValue = document.getElementsByClassName('add-card-in-list')
 
 
 // 카드 추가 이벤트
@@ -10,7 +10,7 @@ export const addCardControllerByClick = () => {
             // 입력한 내용 가져오기
             const valueInput = e.path[3].childNodes[0].value
          
-            // null 값 입력 막기
+            // null 입력 막기
             if( valueInput !== "" ){
 
                 // 내용을 추가할 타겟지정
@@ -38,7 +38,7 @@ export const addCardControllerByEnter = () => {
                 // 입력한 내용 가져오기
                 const valueInput = e.target.value
 
-                // null 값이면 입력막기
+                // null 입력 막기
                 if( valueInput !== "" ){
 
                     // 내용을 추가할 타겟지정
