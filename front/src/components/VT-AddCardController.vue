@@ -1,7 +1,7 @@
 <template>
   <div class="add-a-card-controller">
     <div class="add-a-card-controller-a">
-      <button class="add-input-box">+ Add a card</button>
+      <a class="add-input-box">+ Add a card</a>
     </div>
     <div class="add-a-card-controller-b-hidden">
       <textarea  class="add-card-in-list" placeholder="Enter a title for this card..."></textarea>  
@@ -36,13 +36,22 @@ export default {
 }
 
 .add-a-card-controller-a{
-  display: block;
-} 
+  display: flex;
+  flex-direction: space-between; 
+  max-height: 38px;
+  min-height: 38px;
+}
+
 
 .add-input-box{
-  background-color: whitesmoke;
-  border: 0 solid black;
-  color: grey;
+  background-color: #ebecf0;
+  border-radius: 3px;
+  display: block;
+  color: #5e6c84;
+  flex: 1 0 auto;
+  margin-top: 2px;
+  padding: 4px 8px 4px 0;
+  position: relative;
   height: 27px;
   font-size: 15px;
 }
@@ -61,7 +70,7 @@ export default {
   border-radius: 3px;
   width: 242px;
   min-height: 70px;
-  box-shadow: 0px 2px 2px #E2E2E2;
+  box-shadow: 0px 2px 2px #ebecf0;
   margin-bottom: 3px;
   padding-left: 7px;
   color: gray;

@@ -110,7 +110,7 @@ const makeTemplate = (value) => {
             // Add Card Controller A
             var newAddACardControllerA = document.createElement('div')
             newAddACardControllerA.setAttribute('class','add-a-card-controller-a')
-            var newAddInputBox = document.createElement('button')
+            var newAddInputBox = document.createElement('a')
             newAddInputBox.setAttribute('class','add-input-box')
             newAddInputBox.innerHTML="+ Add a Card"
             newAddACardControllerA.appendChild(newAddInputBox)

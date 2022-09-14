@@ -17,6 +17,19 @@ createApp(App).mount('#app')
 // title drag events
 dragTitle()
 
+const aTag = document.querySelectorAll('a')
+
+const colorChange = function(aTag) {
+    for(var i=0; i<aTag.length; i++){
+        aTag[i].addEventListener("mouseover", () => {
+            aTag.style.backgroundColor = "#172b4d"
+       })
+    }   
+}
+
+colorChange(aTag)
+
+
 // list drag events
 const listDrags = document.getElementsByClassName('card-content-list');
 

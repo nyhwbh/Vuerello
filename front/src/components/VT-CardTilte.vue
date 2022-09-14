@@ -21,8 +21,6 @@ export default {
       listTitle:String
     },
 }
-
-
 </script>
 
 <style>
@@ -38,7 +36,7 @@ export default {
 }
 
 .card-content-title{
-  margin: 5px 3px 8px 3px;
+  margin: 8px 3px 8px 5px;
   color: grey;
 }
 

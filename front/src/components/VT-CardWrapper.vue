@@ -33,7 +33,7 @@ export default {
 .card-contents{
   display: flex;
   flex-direction: column;
-  background-color: whitesmoke;
+  background-color: #ebecf0;
   border-radius: 5px;
   padding-left: 10px;
   padding-bottom: 10px;

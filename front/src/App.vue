@@ -45,4 +45,8 @@ export default {
   display: flex;
   flex-direction: row;
 }
+
+a{
+  cursor: pointer;
+}
 </style>
