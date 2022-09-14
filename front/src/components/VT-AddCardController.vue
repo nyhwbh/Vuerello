@@ -67,10 +67,10 @@ export default {
   box-shadow: 0px 2px 2px #E2E2E2;
   margin-bottom: 3px;
   padding-left: 7px;
-  font-family: sans-serif;
-  font-size: 15px;
-  font-weight: 100;
   color: gray;
+  font-weight: 100;
+  font-size: 15px;
+  font-family: sans-serif;
   resize: none;
 }
 
