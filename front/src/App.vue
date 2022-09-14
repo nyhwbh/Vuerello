@@ -1,7 +1,11 @@
 <template>
   <div class="board">
-    <VTCardWrapper :boards="board[0].boardLists"/>
-    <VTAddListController />
+    <div class="board-lists">
+      <VTCardWrapper :boards="board[0].boardLists"/>
+    </div>
+    <div class="add-list-wrapper">
+      <VTAddListController />
+    </div>
   </div>
 </template>
 
@@ -27,12 +31,18 @@ export default {
 </script>
 
 <style>
+
 .board{
   background-color: burlywood;
   display: flex;
   flex-direction: row;
   padding:10px;
   overflow-x:auto ;
-  height: 96vh;
+  height: 97vh;
+}
+
+.board-lists{
+  display: flex;
+  flex-direction: row;
 }
 </style>

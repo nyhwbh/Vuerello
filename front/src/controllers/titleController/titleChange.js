@@ -10,10 +10,10 @@ export const switchTitleInput = () => {
             inputBoxClose()
             var controllerA = events.path[2].childNodes[0]
             var controllerB = events.path[2].childNodes[1]
-            if (events.path.length === 10) {
+            if (events.path.length === 11) {
                 controllerA = events.path[0].childNodes[0]
                 controllerB = events.path[0].childNodes[1]
-            }else if (events.path.length === 11) {
+            }else if (events.path.length === 12) {
                 controllerA = events.path[1].childNodes[0]
                 controllerB = events.path[1].childNodes[1]
             }
@@ -28,7 +28,6 @@ export const changeTitle = () => {
         textareaValue[i].addEventListener('keydown', (e) => {
             if(e.keyCode === 13){
                 e.preventDefault()
-                console.log(e)
                 var changeTitle = e.path[2].childNodes[0].childNodes[0]
                 var changeTextarea = e.path[0]
                 console.log(changeTitle)

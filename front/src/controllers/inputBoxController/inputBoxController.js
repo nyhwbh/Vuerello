@@ -12,7 +12,7 @@ export const openInputBox = () => {
             titleClose()
             var controllerA = events.path[0].childNodes[0]
             var controllerB = events.path[0].childNodes[0]
-            if (events.path.length === 10){
+            if (events.path.length === 11){
                 controllerA = events.path[1].childNodes[0]
                 controllerB = events.path[1].childNodes[1]
             } else {
