@@ -31,9 +31,6 @@ export default {
   display: flex;
   flex-direction: column;
 }
-</style>
-
-<style scoped>
 .add-a-card-controller-a-hidden{
   display: none;
 }

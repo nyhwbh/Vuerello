@@ -41,9 +41,7 @@ export default {
   margin: 5px 3px 8px 3px;
   color: grey;
 }
-</style>
 
-<style scoped>
 .fa-ellipsis{
   padding-top: 10px;
   color: gray;
