@@ -46,7 +46,6 @@ const inputBoxOpen = function(AddDisapper,InputAppers){
     InputAppers.className='add-a-card-controller-b'
 }
 
-
 export const inputBoxClose = function(){
     const addAppers=document.getElementsByClassName('add-a-card-controller-a-hide')
     const InputDisapper = document.getElementsByClassName('add-a-card-controller-b')
@@ -54,4 +53,29 @@ export const inputBoxClose = function(){
         addAppers[0].className='add-a-card-controller-a'
         InputDisapper[0].className='add-a-card-controller-b-hide'
     }
+}
+
+
+export const inputListBoxClose = function(){
+    const addAppers=document.getElementsByClassName('add-another-list-controller-a-hide')
+    const InputDisapper = document.getElementsByClassName('add-another-list-controller-b')
+    if(addAppers.length !== 0){
+        addAppers[0].className='add-another-list-controller-a'
+        InputDisapper[0].className='add-another-list-controller-b-hide'
+    }
+}
+
+// Open 
+export const openListInputBox = () => {
+    //켜져있는 다른 input box 끄기
+    inputBoxClose()
+    titleClose()
+
+    //타깃 지정 및 이벤트 받기
+    const controllerA = document.getElementsByClassName('add-another-list-controller-a')
+    const controllerB = document.getElementsByClassName('add-another-list-controller-b-hide')
+    
+    // input box 열기
+    controllerA[0].className='add-another-list-controller-a-hide'
+    controllerB[0].className='add-another-list-controller-b'
 }

@@ -4,7 +4,7 @@
       <VTCardWrapper :boards="board[0].boardLists"/>
     </div>
     <div class="add-list-wrapper">
-      <VTAddListController />
+        <VTAddListController />
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@
 <script>
 import VTCardWrapper from "./components/VT-CardWrapper.vue"
 import VTAddListController from "./components/VT-AddListController.vue";
-import todoData from "../../back/data/todoData.json"
+import todoData from "./data/todoData.json"
 
 const board = todoData
 
@@ -44,6 +44,11 @@ export default {
 .board-lists{
   display: flex;
   flex-direction: row;
+}
+
+.add-list-wrapper{
+  flex-shrink: 0;
+  width: 272px;
 }
 
 a{

@@ -22,21 +22,22 @@ export const switchTitleInput = (e) => {
 
 
 //textarea 입력받기
-export const changeTitle = () => {
-    const textareaValue = document.getElementsByClassName('list-name-change')
-    for(var i=0; i<textareaValue.length; i++){
-        textareaValue[i].addEventListener('keydown', (e) => {
-            if(e.keyCode === 13){
-                e.preventDefault()
-                var changeTitle = e.path[2].childNodes[0].childNodes[0]
-                var changeTextarea = e.path[0]
-                var changeValue = e.target.value
-                console.log(e.target._value)
-                titleClose()
-                titleChange(changeTitle, changeTextarea, changeValue)
-            }
-        })
-    }
+export const changeTitle = (e) => {
+    // 엔터 입력 막기
+    e.preventDefault()
+
+    // 타겟 지정
+    var changeTitle = e.path[2].childNodes[0].childNodes[0]
+    var changeTextarea = e.path[0]
+
+    // 값 가져오기
+    var changeValue = e.target.value
+
+    // 제목 입력창 닫기
+    titleClose()
+
+    // 제목 바꿔주기
+    titleChange(changeTitle, changeTextarea, changeValue)
 }
 
 // h3 -> disapper , textarea -> apper
@@ -57,7 +58,18 @@ export const titleClose = function(){
     }
 }
 
-var titleChange =function(target_h3, target_textarea, value){
+var titleChange = function(target_h3, target_textarea, value){
     target_h3.innerText= value
     target_textarea._value=value
+}
+
+export const setNewListTitle = function(e,count) {
+    console.log(e)
+    const value = e.path[4].childNodes[0].childNodes[count].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0]._value
+    console.log(value)
+    let target = e.path[4].childNodes[0].childNodes[count].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0]._value
+    console.log(target)
+    target = value
+    count++
+    return count
 }

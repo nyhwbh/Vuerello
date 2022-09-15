@@ -9,7 +9,7 @@
         <div class="card-add-button">
           <input class="add-card" type="button" value="Add card">
           <span class="close-add-card">
-            <i class="fa-solid fa-xmark close-add-card"></i>
+            <i class="fa-solid fa-xmark"></i>
           </span>
         </div>
         <span class="card-options">
@@ -50,9 +50,9 @@ export default {
   color: #5e6c84;
   flex: 1 0 auto;
   margin-top: 2px;
-  padding: 4px 8px 4px 0;
+  padding: 7px 8px 4px 0;
   position: relative;
-  height: 27px;
+  max-height: 27px;
   font-size: 15px;
 }
 
@@ -65,7 +65,7 @@ export default {
   flex-shrink: 0;
 }
 
-.add-a-card-controller-b > textarea{
+.add-card-in-list{
   border: 0 solid black;
   border-radius: 3px;
   width: 242px;
@@ -86,29 +86,44 @@ export default {
   justify-content: space-between;
 }
 
+.card-add-button{
+  display: flex;
+  flex-direction: row;
+  max-height: 35px;
+
+}
+
 .add-card{
   border: 0 solid black;
   border-radius: 3px;
   background-color: cornflowerblue;
+  box-shadow: 0px 2px 2px #ebecf0;
   color: white;
   flex-shrink: 0;
   width: 70px;
   height: 35px;
 }
 
-.fa-xmark{
+.close-add-card{
   margin-left: 10px;
+  margin-top: 8px;
+}
+
+.fa-xmark{
   color: grey;
-  size: 25px;
+  font-size: 20px;
 }
 
 .card-options{
-  padding-top: 5px;
+  margin-right: 10px;
 }
 
-.fa-ellipsis{
-  color: gray;
-  size: 20px;
-  margin-right: 15px;
-}
+</style>
+<style scoped>
+  .fa-ellipsis{
+    color: gray;
+    font-size: 20px;
+    padding-top: 8px;
+    margin-right: 5px;
+  }
 </style>

@@ -44,6 +44,7 @@ export default {
   padding-top: 10px;
   color: gray;
   margin-right: 15px;
+  font-size: 20px;
 }
 
 .list-name-change{

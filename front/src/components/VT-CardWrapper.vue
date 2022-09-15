@@ -27,7 +27,6 @@ export default {
   width: 272px;
   max-height: max-content;
   margin-right: 10px;
-  overflow-y: auto;
 }
 
 .card-contents{

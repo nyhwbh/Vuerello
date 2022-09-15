@@ -1,13 +1,13 @@
 <template>
-  <div class="add-a-card-controller">
-    <div class="add-a-card-controller-a">
-      <button class="add-input-box">+ Add another list</button>
+  <div class="add-another-list-controller">
+    <div class="add-another-list-controller-a">
+      <a class="add-list-input-box">+ Add another list</a>
     </div>
-    <div class="add-a-card-controller-b-hide">
+    <div class="add-another-list-controller-b-hide">
       <textarea class="add-list-value" placeholder="Enter list title..."></textarea>
-      <div class="add-a-card-buttonbox">
+      <div class="add-another-list-buttonbox">
         <input type="button" value="Add list" class="add-list-button">
-        <span class="close-add-card">
+        <span class="close-add-list-card">
           <i class="fa-solid fa-xmark close-add-card"></i>
         </span>
       </div>
@@ -21,49 +21,51 @@ export default {
 }
 </script>
 
-<style scoped>
-.add-a-card-controller-a-hidden{
+<style>
+.add-another-list-controller-a-hide{
   display: none;
 }
 
-.add-a-card-controller-a{
+.add-another-list-controller-a{
   display: block;
 } 
 
-.add-a-card-controller{
-  display: flex;
-  flex-direction: column;
-  width: 272px;
+.add-another-list-controller{
+  display: block;
 }
 
-.add-input-box{
+.add-list-input-box{
+  display: block;
   background-color: grey;
   opacity: 0.6;
   border: 0 solid black;
   border-radius: 5px;
   color: white;
-  width: 284px;
-  height: 35px;
+  min-height: 35px;
+  max-height: 35px;
   font-size: 15px;
+  padding-top: 10px;
+  text-align: center;
   margin-bottom: 5px;
 }
 
-.add-a-card-controller-b-hidden{
+.add-another-list-controller-b-hide{
   display: none;
 }
 
-.add-a-card-controller-b{
+.add-another-list-controller-b{
   display: block;
-  background-color: whitesmoke;
-  border-radius: 3px;
-  width: 272px;
-  padding: 6px;
+  background-color: #ebecf0;
+  border-radius: 5px;
+  padding: 8px 5px 7px 7px;
+  border-radius: 5px;
+  max-width: 272px;
 }
 
-.add-a-card-controller-b > textarea{
+.add-list-value{
   border: solid cornflowerblue;
   border-radius: 3px;
-  width: 96%;
+  width: 94%;
   min-height: 35px;
   margin-bottom: 5px;
   padding-left: 5px;
@@ -71,10 +73,11 @@ export default {
   font-weight: 100;
   font-size: 15px;
   font-family: sans-serif;
+  box-shadow: 0px 2px 2px #E2E2E2;
   resize: none;
 }
 
-.add-a-card-buttonbox > input{
+.add-another-list-buttonbox > input{
   border: 0 solid black;
   border-radius: 3px;
   background-color: cornflowerblue;
