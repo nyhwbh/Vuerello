@@ -62,14 +62,3 @@ var titleChange = function(target_h3, target_textarea, value){
     target_h3.innerText= value
     target_textarea._value=value
 }
-
-export const setNewListTitle = function(e,count) {
-    console.log(e)
-    const value = e.path[4].childNodes[0].childNodes[count].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0]._value
-    console.log(value)
-    let target = e.path[4].childNodes[0].childNodes[count].childNodes[0].childNodes[0].childNodes[0].childNodes[1].childNodes[0]._value
-    console.log(target)
-    target = value
-    count++
-    return count
-}

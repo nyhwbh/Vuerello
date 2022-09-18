@@ -29,7 +29,7 @@ export const makeTemplate = (value) => {
     newTitleControllerB.setAttribute('class','card-title-controller-b-hide')
     var newListNameChange = document.createElement('textarea')
     newListNameChange.setAttribute('class','list-name-change')
-    newListNameChange.setAttribute('value', "")
+    newListNameChange.innerHTML = value
     newTitleControllerB.appendChild(newListNameChange)
     // title control boxA + title control boxB
     newTitleControllerBox.append(newTitleControllerA,newTitleControllerB)

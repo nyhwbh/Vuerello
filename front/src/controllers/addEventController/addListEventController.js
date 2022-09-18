@@ -1,5 +1,4 @@
 import { makeTemplate } from './addListTemplet'
-import { setNewListTitle } from '../titleController/titleChange'
 
 
 // 리스트 추가 이벤트
@@ -41,12 +40,8 @@ export const addListControllerByEnter = (e) => {
         
         addTarget.appendChild(makeChild)
         
-        // 
-        console.log("here")
-        var count = 6
-        setNewListTitle( e, count )
-        console.log(count)
         // 새로운 값을 받을 수 있도록 내용 삭제
+        console.log(e.target.value)
         e.target.value=null                                     
     }    
 }
