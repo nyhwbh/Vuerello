@@ -73,7 +73,6 @@ export default {
   font-weight: 100;
   font-size: 15px;
   font-family: sans-serif;
-  box-shadow: 0px 2px 2px #E2E2E2;
   resize: none;
 }
 
