@@ -1,17 +1,17 @@
 <template>
   <div class="board">
-    <div class="board-lists">
-      <VTCardWrapper :boards="board[0].boardLists"/>
+    <div class="boardLists">
+      <ListWrapper :boards="board[0].boardLists"/>
     </div>
-    <div class="add-list-wrapper">
-        <VTAddListController />
+    <div class="addListWrapper">
+        <AddListController />
     </div>
   </div>
 </template>
 
 <script>
-import VTCardWrapper from "./components/VT-CardWrapper.vue"
-import VTAddListController from "./components/VT-AddListController.vue";
+import ListWrapper from "./components/VT-ListWrapper.vue"
+import AddListController from "./components/VT-AddListController.vue";
 import todoData from "./data/todoData.json"
 
 const board = todoData
@@ -19,8 +19,8 @@ const board = todoData
 export default {
   name: 'App',
   components: {
-    VTCardWrapper,
-    VTAddListController
+    ListWrapper,
+    AddListController
   },
   data() {
     return{
@@ -41,12 +41,12 @@ export default {
   height: 97vh;
 }
 
-.board-lists{
+.boardLists{
   display: flex;
   flex-direction: row;
 }
 
-.add-list-wrapper{
+.addListWrapper{
   flex-shrink: 0;
   width: 272px;
 }

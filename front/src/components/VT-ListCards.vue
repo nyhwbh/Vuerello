@@ -1,25 +1,25 @@
 <template>
-  <div class="card-lists">
-    <a class="card-content-list" v-for="(list,idx) in cardsList" :key="idx">{{list.cardTitle}}</a>
+  <div class="listCards">
+    <a class="listCardslist" v-for="(list,idx) in listCards" :key="idx">{{list.cardTitle}}</a>
   </div>
 </template>
 
 <script>
 export default {
-    name: "VTCardLists",
+    name: "ListCards",
     props: {
-      cardsList: Array
+      listCards: Array
     },
 }
 </script>
 
 <style>
-.card-lists{
+.listCards{
   display: flex;
   flex-direction: column;
 }
 
-.card-content-list{
+.listCardslist{
   background-color: white;
   border-radius: 3px;
   margin-bottom: 7px;

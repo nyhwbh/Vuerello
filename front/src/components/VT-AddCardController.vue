@@ -1,18 +1,18 @@
 <template>
-  <div class="add-a-card-controller">
-    <div class="add-a-card-controller-a">
-      <a class="add-input-box">+ Add a card</a>
+  <div class="addACardController">
+    <div class="addACardController-a" v-bind:class="{}">
+      <a class="addACardButton">+ Add a card</a>
     </div>
-    <div class="add-a-card-controller-b-hide">
-      <textarea  class="add-card-in-list" placeholder="Enter a title for this card..."></textarea>  
-      <div class="add-a-card-buttonbox">
-        <div class="card-add-button">
-          <input class="add-card" type="button" value="Add card">
-          <span class="close-add-card">
+    <div class="addACardController-b-hide">
+      <textarea  class="addCardInCardsList" placeholder="Enter a title for this card..."></textarea>  
+      <div class="addACardButtonBox">
+        <div class="addCardButton">
+          <input class="addCard" type="button" value="Add card">
+          <span class="closeAddCard">
             <i class="fa-solid fa-xmark"></i>
           </span>
         </div>
-        <span class="card-options">
+        <span class="addCardOptions">
           <i class="fa-solid fa-ellipsis"></i>
         </span>
       </div>
@@ -27,15 +27,15 @@ export default {
 </script>
 
 <style>
-.add-a-card-controller{
+.addACardController{
   display: flex;
   flex-direction: column;
 }
-.add-a-card-controller-a-hide{
+.addACardController-a-hide{
   display: none;
 }
 
-.add-a-card-controller-a{
+.addACardController-a{
   display: flex;
   flex-direction: space-between; 
   max-height: 38px;
@@ -43,7 +43,7 @@ export default {
 }
 
 
-.add-input-box{
+.addACardButton{
   background-color: #ebecf0;
   border-radius: 3px;
   display: block;
@@ -56,16 +56,16 @@ export default {
   font-size: 15px;
 }
 
-.add-a-card-controller-b-hide{
+.addACardController-b-hide{
   display: none;
 }
 
-.add-a-card-controller-b{
+.addACardController-b{
   display: block;
   flex-shrink: 0;
 }
 
-.add-card-in-list{
+.addCardInCardsList{
   border: 0 solid black;
   border-radius: 3px;
   width: 242px;
@@ -80,20 +80,20 @@ export default {
   resize: none;
 }
 
-.add-a-card-buttonbox{
+.addACardButtonBox{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.card-add-button{
+.addCardButton{
   display: flex;
   flex-direction: row;
   max-height: 35px;
 
 }
 
-.add-card{
+.addCard{
   border: 0 solid black;
   border-radius: 3px;
   background-color: cornflowerblue;
@@ -104,7 +104,7 @@ export default {
   height: 35px;
 }
 
-.close-add-card{
+.closeAddCard{
   margin-left: 10px;
   margin-top: 8px;
 }
@@ -114,7 +114,7 @@ export default {
   font-size: 20px;
 }
 
-.card-options{
+.addCardOptions{
   margin-right: 10px;
 }
 

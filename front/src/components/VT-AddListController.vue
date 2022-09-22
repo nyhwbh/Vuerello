@@ -1,14 +1,14 @@
 <template>
-  <div class="add-another-list-controller">
-    <div class="add-another-list-controller-a">
-      <a class="add-list-input-box">+ Add another list</a>
+  <div class="addAnotherListController">
+    <div class="addAnotherListControllerA">
+      <a class="addAnotherListInputBox">+ Add another list</a>
     </div>
-    <div class="add-another-list-controller-b-hide">
-      <textarea class="add-list-value" placeholder="Enter list title..."></textarea>
-      <div class="add-another-list-buttonbox">
-        <input type="button" value="Add list" class="add-list-button">
-        <span class="close-add-list-card">
-          <i class="fa-solid fa-xmark close-add-card"></i>
+    <div class="addAnotherListControllerBHide">
+      <textarea class="addAnotherListvalue" placeholder="Enter list title..."></textarea>
+      <div class="addAnotherlistButtonbox">
+        <input type="button" value="Add list" class="addAnotherListbutton">
+        <span class="closeAddAnotherListcard">
+          <i class="fa-solid fa-xmark closeAddCard"></i>
         </span>
       </div>
     </div>
@@ -17,24 +17,24 @@
 
 <script>
 export default {
-    name: "VTAddCardController",
+    name: "AddCardController",
 }
 </script>
 
 <style>
-.add-another-list-controller-a-hide{
+.addAnotherListControllerAHide{
   display: none;
 }
 
-.add-another-list-controller-a{
+.addAnotherListControllerA{
   display: block;
 } 
 
-.add-another-list-controller{
+.addAnotherListController{
   display: block;
 }
 
-.add-list-input-box{
+.addAnotherListInputBox{
   display: block;
   background-color: grey;
   opacity: 0.6;
@@ -49,11 +49,11 @@ export default {
   margin-bottom: 5px;
 }
 
-.add-another-list-controller-b-hide{
+.addAnotherListControllerBHide{
   display: none;
 }
 
-.add-another-list-controller-b{
+.addAnotherListControllerB{
   display: block;
   background-color: #ebecf0;
   border-radius: 5px;
@@ -62,7 +62,7 @@ export default {
   max-width: 272px;
 }
 
-.add-list-value{
+.addAnotherListvalue{
   border: solid cornflowerblue;
   border-radius: 3px;
   width: 94%;
@@ -76,7 +76,7 @@ export default {
   resize: none;
 }
 
-.add-another-list-buttonbox > input{
+.addAnotherlistButtonbox > input{
   border: 0 solid black;
   border-radius: 3px;
   background-color: cornflowerblue;
@@ -85,7 +85,7 @@ export default {
   height: 35px;
 }
 
-.fa-xmark{
+.closeAddCard{
   margin-left: 10px;
   color: grey;
   size: 25px;

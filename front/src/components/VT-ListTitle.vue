@@ -1,11 +1,11 @@
 <template>
-  <div class="card-title">
-    <div class="card-title-controller-box">
-      <span class="card-title-controller-a">
-        <h3 class="card-content-title">{{listTitle}}</h3>
+  <div class="listTitle">
+    <div class="listTitleControllerBox">
+      <span class="listTitleControllerA">
+        <h3 class="listContentTitle">{{listTitle}}</h3>
       </span>
-      <span class="card-title-controller-b-hide">
-        <textarea class="list-name-change" :value="listTitle"></textarea>
+      <span class="listTitleControllerBHide">
+        <textarea class="listTitleChange" :value="listTitle"></textarea>
       </span>
     </div>
     <span>
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-    name: "VTCardTitle",
+    name: "ListTitle",
     props: {
       listTitle:String
     },
@@ -24,18 +24,18 @@ export default {
 </script>
 
 <style>
-.card-title{
+.listTitle{
   display: flex;
   flex-direction: row;
 }
 
-.card-title-controller-box{
+.listTitleControllerBox{
   flex-shrink: 0;
   width: 220px;
   margin-right: 10px;
 }
 
-.card-content-title{
+.listContentTitle{
   margin: 8px 3px 8px 5px;
   color: grey;
 }
@@ -47,7 +47,7 @@ export default {
   font-size: 20px;
 }
 
-.list-name-change{
+.listTitleChange{
   border: 2px solid cornflowerblue;
   border-radius: 3px;
   width: 96%;
@@ -63,11 +63,11 @@ export default {
   resize: none;
 }
 
-.card-title-controller-a-hide{
+.listTitleControllerAHide{
   display: none;
 }
 
-.card-title-controller-b-hide{
+.listTitleControllerBHide{
   display: none;
 }
 </style>
