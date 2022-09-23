@@ -1,14 +1,14 @@
 <template>
   <div class="addACardController">
-    <div class="addACardControllerA" v-bind:class="{}">
+    <div class="addACardControllerA" v-show="controller" @click="addCardBoxOpen">
       <a class="addACardButton">+ Add a card</a>
     </div>
-    <div class="addACardControllerB">
+    <div class="addACardControllerB" v-show="!controller" >
       <textarea  class="addCardInCardsList" placeholder="Enter a title for this card..."></textarea>  
       <div class="addACardButtonBox">
         <div class="addCardButton">
           <input class="addCard" type="button" value="Add card">
-          <span class="closeAddCard">
+          <span class="closeAddCard" @click="addCardBoxClose">
             <i class="fa-solid fa-xmark"></i>
           </span>
         </div>
@@ -22,7 +22,23 @@
 
 <script>
 export default {
-    name: "VTAddCardController",
+    name: "AddCardController",
+    props: {
+      addController:Boolean
+      },
+    data(){
+      return{
+        controller:this.addController
+      }
+    },
+    methods:{
+      addCardBoxOpen(){
+        this.controller=!this.controller
+      },
+      addCardBoxClose(){
+        this.controller = true;
+      }
+    }
 }
 </script>
 

@@ -1,13 +1,13 @@
 <template>
   <div class="addAnotherListController">
-    <div class="addAnotherListControllerA">
+    <div class="addAnotherListControllerA" v-show="controller" @click="addListBoxOpen">
       <a class="addAnotherListInputBox">+ Add another list</a>
     </div>
-    <div class="addAnotherListControllerB">
-      <textarea class="addAnotherListvalue" placeholder="Enter list title..."></textarea>
+    <div class="addAnotherListControllerB" v-show="!controller">
+      <textarea class="addAnotherListvalue" placeholder="Enter list title..." v-model="listValue" v-on:keydown.enter.prevent="addNewList"></textarea>
       <div class="addAnotherlistButtonbox">
         <input type="button" value="Add list" class="addAnotherListbutton">
-        <span class="closeAddAnotherListcard">
+        <span class="closeAddAnotherListcard" @click="addListBoxClose">
           <i class="fa-solid fa-xmark closeAddCard"></i>
         </span>
       </div>
@@ -18,6 +18,24 @@
 <script>
 export default {
     name: "AddCardController",
+    data() {
+      return{
+        controller : true,
+        listValue:""
+      }
+    },
+    methods:{
+      addListBoxOpen(){
+        this.controller = !this.controller;
+      },
+      addListBoxClose(){
+        this.controller = true;
+      },
+      addNewList(){
+        console.log(this.listValue)
+        this.listValue=''
+      }
+    }
 }
 </script>
 

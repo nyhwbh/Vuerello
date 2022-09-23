@@ -3,7 +3,7 @@
     "boardName" : "test",
     "boardLists": [
       {
-        "listTitle":"To do",
+        "listTitle":{"title":"To do", "titleControl":true, "addCardControl":true},
         "listCards":[
           {
             "cardTitle" :"Vue-Go app 생성",
@@ -32,7 +32,7 @@
         ]
       },
       {
-        "listTitle":"Doing",
+        "listTitle":{"title":"Doing", "titleControl":true, "addCardControl":true},
         "listCards":[
           {
             "cardTitle" : "Vue-Go app 프론트 코딩",
@@ -49,7 +49,7 @@
         ]
       },
       {
-        "listTitle":"Done",
+        "listTitle":{"title":"Done", "titleControl":true, "addCardControl":true},
         "listCards":[
           {
             "cardTitle" : "청소하기",

@@ -1,11 +1,11 @@
 <template>
   <div class="listTitle">
     <div class="listTitleControllerBox">
-      <span class="listTitleControllerA">
-        <h3 class="listContentTitle">{{listTitle}}</h3>
+      <span class="listTitleControllerA" v-show="controller" @click="titleChangeOpen">
+        <h3 class="listContentTitle" >{{listTitle.title}}</h3>
       </span>
-      <span class="listTitleControllerB">
-        <textarea class="listTitleChange" :value="listTitle"></textarea>
+      <span class="listTitleControllerB" v-show="!controller">
+        <textarea class="listTitleChange" :value="listTitle.title"></textarea>
       </span>
     </div>
     <span>
@@ -17,10 +17,27 @@
 <script>
 export default {
     name: "ListTitle",
-    props: {
-      listTitle:String
+    props:{
+      listTitle:{
+        title:String,
+        titleControl:Boolean,
+        addCardControl:Boolean
+      },
     },
-}
+    data(){
+      return{
+        controller:this.listTitle.titleControl
+      }
+    },
+    methods:{
+      titleChangeOpen(){
+        this.controller=!this.controller;
+      },
+      titleChangeClose(){
+        this.controller= true;
+      }
+    }
+  }
 </script>
 
 <style>

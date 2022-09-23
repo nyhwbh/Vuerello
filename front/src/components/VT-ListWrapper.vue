@@ -1,9 +1,9 @@
 <template>
-  <div class="listWrapper" v-for="(items,idx) in boards" :key="idx">
+  <div class="listWrapper" v-for="(items,idx) in boards" v-bind:key="idx">
     <div class="listContent">
       <ListTitle :listTitle="items.listTitle"/>
       <ListCards :listCards="items.listCards"/>
-      <AddCardController />
+      <AddCardController :addController="items.listTitle.addCardControl"/>
     </div>
   </div>
 </template>
@@ -18,6 +18,8 @@ export default {
         boards: Array
     },
     components: { ListTitle, ListCards, AddCardController }
+    ,methods:{
+    }
 }
 </script>
 
