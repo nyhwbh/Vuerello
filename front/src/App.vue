@@ -10,9 +10,10 @@
 </template>
 
 <script>
-import ListWrapper from "./components/VT-ListWrapper.vue"
+import ListWrapper from "./components/VT-ListWrapper.vue";
 import AddListController from "./components/VT-AddListController.vue";
-import todoData from "./data/todoData.json"
+
+import todoData from "./data/todoData.json";
 
 const board = todoData
 
@@ -53,5 +54,9 @@ export default {
 
 a{
   cursor: pointer;
+}
+
+textarea:focus{
+  outline: none;
 }
 </style>

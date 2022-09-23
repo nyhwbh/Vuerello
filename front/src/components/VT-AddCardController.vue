@@ -1,9 +1,9 @@
 <template>
   <div class="addACardController">
-    <div class="addACardController-a" v-bind:class="{}">
+    <div class="addACardControllerA" v-bind:class="{}">
       <a class="addACardButton">+ Add a card</a>
     </div>
-    <div class="addACardController-b-hide">
+    <div class="addACardControllerB">
       <textarea  class="addCardInCardsList" placeholder="Enter a title for this card..."></textarea>  
       <div class="addACardButtonBox">
         <div class="addCardButton">
@@ -31,11 +31,8 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.addACardController-a-hide{
-  display: none;
-}
 
-.addACardController-a{
+.addACardControllerA{
   display: flex;
   flex-direction: space-between; 
   max-height: 38px;
@@ -56,11 +53,7 @@ export default {
   font-size: 15px;
 }
 
-.addACardController-b-hide{
-  display: none;
-}
-
-.addACardController-b{
+.addACardControllerB{
   display: block;
   flex-shrink: 0;
 }

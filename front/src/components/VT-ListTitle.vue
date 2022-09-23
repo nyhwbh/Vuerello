@@ -4,7 +4,7 @@
       <span class="listTitleControllerA">
         <h3 class="listContentTitle">{{listTitle}}</h3>
       </span>
-      <span class="listTitleControllerBHide">
+      <span class="listTitleControllerB">
         <textarea class="listTitleChange" :value="listTitle"></textarea>
       </span>
     </div>
@@ -61,13 +61,5 @@ export default {
   font-size: 18px;
   font-weight: bold;
   resize: none;
-}
-
-.listTitleControllerAHide{
-  display: none;
-}
-
-.listTitleControllerBHide{
-  display: none;
 }
 </style>

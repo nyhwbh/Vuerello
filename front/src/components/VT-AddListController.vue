@@ -3,7 +3,7 @@
     <div class="addAnotherListControllerA">
       <a class="addAnotherListInputBox">+ Add another list</a>
     </div>
-    <div class="addAnotherListControllerBHide">
+    <div class="addAnotherListControllerB">
       <textarea class="addAnotherListvalue" placeholder="Enter list title..."></textarea>
       <div class="addAnotherlistButtonbox">
         <input type="button" value="Add list" class="addAnotherListbutton">
@@ -22,10 +22,6 @@ export default {
 </script>
 
 <style>
-.addAnotherListControllerAHide{
-  display: none;
-}
-
 .addAnotherListControllerA{
   display: block;
 } 
@@ -47,10 +43,6 @@ export default {
   padding-top: 10px;
   text-align: center;
   margin-bottom: 5px;
-}
-
-.addAnotherListControllerBHide{
-  display: none;
 }
 
 .addAnotherListControllerB{
