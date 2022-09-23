@@ -2,10 +2,11 @@
   <div class="listTitle">
     <div class="listTitleControllerBox">
       <span class="listTitleControllerA" v-show="controller" @click="titleChangeOpen">
-        <h3 class="listContentTitle" >{{listTitle.title}}</h3>
+        <h3 class="listContentTitle" >{{titleValue}}</h3>
       </span>
       <span class="listTitleControllerB" v-show="!controller">
-        <textarea class="listTitleChange" :value="listTitle.title"></textarea>
+        <textarea class="listTitleChange" ref="focusValue" v-model="titleValue" 
+        v-on:keydown.enter.prevent="[titleChange(),titleChangeClose()]"></textarea>
       </span>
     </div>
     <span>
@@ -26,15 +27,21 @@ export default {
     },
     data(){
       return{
-        controller:this.listTitle.titleControl
+        controller:this.listTitle.titleControl,
+        titleValue:this.listTitle.title
       }
     },
     methods:{
       titleChangeOpen(){
         this.controller=!this.controller;
+        console.log(this.$refs.focusValue)
+        this.$refs.focusValue.focus();
       },
       titleChangeClose(){
         this.controller= true;
+      },
+      titleChange(){
+        console.log(this.titleValue);
       }
     }
   }
