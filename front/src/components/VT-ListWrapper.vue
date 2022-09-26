@@ -17,8 +17,12 @@ export default {
     props: {
         boards: Array
     },
-    components: { ListTitle, ListCards, AddCardController }
-    ,methods:{
+    components: { 
+      ListTitle, 
+      ListCards, 
+      AddCardController 
+    },
+    methods:{
     }
 }
 </script>

@@ -4,10 +4,13 @@
       <a class="addACardButton">+ Add a card</a>
     </div>
     <div class="addACardControllerB" v-show="!controller" >
-      <textarea  class="addCardInCardsList" placeholder="Enter a title for this card..."></textarea>  
+      <textarea  class="addCardInCardsList" placeholder="Enter a title for this card..."
+      v-on:keydown.enter.prevent="addCardOnListEnter" 
+      v-model="newCardValue"></textarea>  
       <div class="addACardButtonBox">
         <div class="addCardButton">
-          <input class="addCard" type="button" value="Add card">
+          <input class="addCard" type="button" value="Add card"
+          @click="addCardOnListClick">
           <span class="closeAddCard" @click="addCardBoxClose">
             <i class="fa-solid fa-xmark"></i>
           </span>
@@ -28,7 +31,8 @@ export default {
       },
     data(){
       return{
-        controller:this.addController
+        controller: this.addController,
+        newCardValue: ""
       }
     },
     methods:{
@@ -37,6 +41,22 @@ export default {
       },
       addCardBoxClose(){
         this.controller = true;
+      },
+      addCardOnListEnter(e){
+        const target = e.path[3].childNodes[1]
+        var newCard = document.createElement('a')
+        newCard.setAttribute("class", "listCardslist")
+        newCard.innerHTML=this.newCardValue
+        target.appendChild(newCard)
+        this.newCardValue = ""
+      },
+      addCardOnListClick(e) {
+        const target = e.path[5].childNodes[1]
+        var newCard = document.createElement('a')
+        newCard.setAttribute("class", "listCardslist")
+        newCard.innerHTML = this.newCardValue
+        target.appendChild(newCard)
+        this.newCardValue = ""
       }
     }
 }

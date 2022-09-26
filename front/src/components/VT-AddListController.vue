@@ -4,7 +4,8 @@
       <a class="addAnotherListInputBox">+ Add another list</a>
     </div>
     <div class="addAnotherListControllerB" v-show="!controller">
-      <textarea class="addAnotherListvalue" placeholder="Enter list title..." v-model="listValue" v-on:keydown.enter.prevent="addNewList"></textarea>
+      <textarea class="addAnotherListvalue" placeholder="Enter list title..." 
+      v-model="listValue" v-on:keydown.enter.prevent="addNewList"></textarea>
       <div class="addAnotherlistButtonbox">
         <input type="button" value="Add list" class="addAnotherListbutton">
         <span class="closeAddAnotherListcard" @click="addListBoxClose">
@@ -21,7 +22,7 @@ export default {
     data() {
       return{
         controller : true,
-        listValue:""
+        listValue:"",
       }
     },
     methods:{
@@ -32,10 +33,8 @@ export default {
         this.controller = true;
       },
       addNewList(){
-        console.log(this.listValue)
-        this.listValue=''
       }
-    }
+    },
 }
 </script>
 
