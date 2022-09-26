@@ -33,6 +33,13 @@ export default {
         this.controller = true;
       },
       addNewList(){
+        if(this.listValue !== ""){
+          this.$emit('addNewListCard',this.listValue);
+          this.clearInput()
+        }
+      },
+      clearInput(){
+        this.listValue = ""
       }
     },
 }

@@ -1,21 +1,19 @@
 <template>
   <div class="board">
     <div class="boardLists">
-      <ListWrapper :boards="board[0].boardLists"/>
+      <ListWrapper :boards="board.boardLists"/>
     </div>
     <div class="addListWrapper">
-        <AddListController />
+        <AddListController v-on:addNewListCard="addAnotherList"></AddListController>
     </div>
   </div>
 </template>
 
 <script>
-import ListWrapper from "./components/VT-ListWrapper.vue";
 import AddListController from "./components/VT-AddListController.vue";
+import ListWrapper from "./components/VT-ListWrapper.vue";
 
 import todoData from "./data/todoData.json";
-
-const board = todoData
 
 export default {
   name: 'App',
@@ -25,7 +23,17 @@ export default {
   },
   data() {
     return{
-      board
+      board:todoData[0]
+    }
+  },
+  methods:{
+    addAnotherList(newList){
+      console.log(this.board)
+      const newData = {
+        "listTitle": { "title": newList, "titleControl": true, "addCardControl": true },
+        "listCards": []
+      }
+      this.board.boardLists.push(newData)
     }
   }
 }
