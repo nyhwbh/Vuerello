@@ -6,7 +6,7 @@
         "listTitle":{"title":"To do", "titleControl":true, "addCardControl":true},
         "listCards":[
           {
-            "cardTitle" :"Vue-Go app 생성",
+            "cardTitle" : "Vue-Go app 생성",
             "cardDetail" : "Vue app 생성및 Go app 생성 후 연결"
           },
           {

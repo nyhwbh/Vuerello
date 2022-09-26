@@ -1,8 +1,6 @@
 <template>
   <div class="board">
-    <div class="boardLists">
-      <ListWrapper :boards="board.boardLists"/>
-    </div>
+    <ListWrapper :boards="board.boardLists"/>
     <div class="addListWrapper">
         <AddListController v-on:addNewListCard="addAnotherList"></AddListController>
     </div>
@@ -28,7 +26,6 @@ export default {
   },
   methods:{
     addAnotherList(newList){
-      console.log(this.board)
       const newData = {
         "listTitle": { "title": newList, "titleControl": true, "addCardControl": true },
         "listCards": []
@@ -48,11 +45,6 @@ export default {
   padding:10px;
   overflow-x:auto ;
   height: 97vh;
-}
-
-.boardLists{
-  display: flex;
-  flex-direction: row;
 }
 
 .addListWrapper{

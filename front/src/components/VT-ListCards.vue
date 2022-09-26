@@ -1,6 +1,6 @@
 <template>
   <div class="listCards">
-    <a class="listCardslist" v-for="(list,idx) in listCards" :key="idx">{{list.cardTitle}}</a>
+    <a class="listCardslist" v-for="(list,idx) in listCards.listCards" :key="idx">{{list.cardTitle}}</a>
   </div>
 </template>
 
@@ -8,8 +8,13 @@
 export default {
     name: "ListCards",
     props: {
-      listCards: Array
+      listCards: {
+        listTitle:Object,
+        listCards:Array
+      }
     },
+    mathods:{
+    }
 }
 </script>
 
@@ -20,6 +25,7 @@ export default {
 }
 
 .listCardslist{
+  display: block;
   background-color: white;
   border-radius: 3px;
   margin-bottom: 7px;

@@ -1,26 +1,20 @@
 <template>
-  <div class="listWrapper" v-for="(items,idx) in boards" v-bind:key="idx">
-    <div class="listContent">
-      <ListTitle :listTitle="items.listTitle"/>
-      <ListCards :listCards="items.listCards"/>
-      <AddCardController :addController="items.listTitle.addCardControl"/>
+  <div class="boardLists">
+    <div class="listWrapper" v-for="item in boards" v-bind:key="item">
+      <ListContent :ContentsItem="item"/>
     </div>
   </div>
 </template>
 
 <script>
-import ListTitle from './VT-ListTitle.vue';
-import ListCards from './VT-ListCards.vue';
-import AddCardController from './VT-AddCardController.vue';
+import ListContent from "./VT-ListContent"
 export default {
     name: "ListWrapper",
     props: {
         boards: Array
     },
     components: { 
-      ListTitle, 
-      ListCards, 
-      AddCardController 
+      ListContent
     },
     methods:{
     }
@@ -28,6 +22,11 @@ export default {
 </script>
 
 <style>
+.boardLists{
+  display: flex;
+  flex-direction: row;
+}
+
 .listWrapper{
   flex-shrink: 0;
   width: 272px;
