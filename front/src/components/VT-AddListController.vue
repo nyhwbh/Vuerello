@@ -7,7 +7,8 @@
       <textarea class="addAnotherListvalue" placeholder="Enter list title..." 
       v-model="listValue" v-on:keydown.enter.prevent="addNewList"></textarea>
       <div class="addAnotherlistButtonbox">
-        <input type="button" value="Add list" class="addAnotherListbutton">
+        <input type="button" value="Add list" class="addAnotherListbutton"
+               @click="addNewList">
         <span class="closeAddAnotherListcard" @click="addListBoxClose">
           <i class="fa-solid fa-xmark closeAddCard"></i>
         </span>
