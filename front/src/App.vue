@@ -1,6 +1,7 @@
 <template>
   <div class="board">
-    <ListWrapper :boards="board.boardLists" />
+    <ListWrapper :boards="board.boardLists" 
+      v-on:addNewCard="addNewCard"></ListWrapper>
     <div class="addListWrapper">
         <AddListController v-on:addNewListCard="addAnotherList"></AddListController>
     </div>
@@ -31,6 +32,9 @@ export default {
         "listCards": []
       }
       this.board.boardLists.push(newData)
+    },addNewCard(target, newCard){
+      const newData = { "cardTitle": newCard, "cardDetail": "" }
+      this.board.boardLists[target].listCards.push(newData)
     }
   }
 }
