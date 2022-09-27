@@ -1,7 +1,7 @@
 <template>
 <div class="listContent">
     <ListTitle :listTitle="ContentsItem.listTitle" />
-    <ListCards :listCards="ContentsItem" />
+    <ListCards :listCards="ContentsItem" s/>
     <AddCardController :addController="ContentsItem.listTitle.addCardControl" />
 </div>
 </template>

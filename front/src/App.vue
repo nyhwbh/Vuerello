@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-    <ListWrapper :boards="board.boardLists"/>
+    <ListWrapper :boards="board.boardLists" />
     <div class="addListWrapper">
         <AddListController v-on:addNewListCard="addAnotherList"></AddListController>
     </div>

@@ -1,6 +1,7 @@
 <template>
   <div class="listCards">
-    <a class="listCardslist" v-for="(list,idx) in listCards.listCards" :key="idx">{{list.cardTitle}}</a>
+    <a class="listCardslist" 
+      v-for="(list,idx) in listCards.listCards" :key="idx">{{list.cardTitle}}</a>
   </div>
 </template>
 
