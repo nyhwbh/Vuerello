@@ -3,12 +3,14 @@
        @drop.prevent="wrapperDrop($event)"
        @dragenter.prevent
        @dragover.prevent>
-    <div class="listWrapper" v-for="item in boards" v-bind:key="item"
+    <div class="listWrapper"
+        v-for="item in boards" v-bind:key="item"
         @drop.prevent="cardDrop($event)"
         @dragenter.prevent
-        @dragover.prevent>
+        @dragover.prevent
+        >
       <div class="listContent">
-         <div class="listTitle" 
+         <div class="listTitle"
          @dragstart="wrapperDrag($event, item.listTitle)"
          draggable="true">
           <div class="listTitleControllerBox">
@@ -25,7 +27,7 @@
           </span>
         </div>
         <div class="listCards">
-          <a class="listCardslist" 
+          <a class="listCardslist"
             v-for="(list,idx) in item.listCards" :key="idx"
             @dragstart="cardDrag($event, list)"
             draggable="true">
@@ -68,7 +70,7 @@ export default {
       return{
         contentData : this.boards,
         titleValue:"",
-        newCardValue:""
+        newCardValue:"",
       }
     },
     components: {
@@ -196,9 +198,6 @@ export default {
           this.$emit('addNewCard', targetIdx, this.newCardValue);
           this.newCardValue=""
         }
-      },
-      checkLog(data){
-        console.log(data)
       }
     }
 }
