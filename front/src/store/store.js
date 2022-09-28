@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { createStore } from "vuex";
+import vuerello from "./modules/vuerello"
 
-Vue.use(Vuex);
-
-export const store  = new Vuex.store({
-    //
+export default createStore({
+    modules : {
+        vuerello
+    }
 })

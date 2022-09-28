@@ -1,9 +1,11 @@
 <template>
-  <div class="board">
-    <ListWrapper :boards="board.boardLists" 
-      v-on:addNewCard="addNewCard"></ListWrapper>
-    <div class="addListWrapper">
-        <AddListController v-on:addNewListCard="addAnotherList"></AddListController>
+  <div id="app">
+    <div class="board">
+      <ListWrapper :boards="board.boardLists" 
+        v-on:addNewCard="addNewCard"></ListWrapper>
+      <div class="addListWrapper">
+          <AddListController v-on:addNewListCard="addAnotherList"></AddListController>
+      </div>
     </div>
   </div>
 </template>
