@@ -1,15 +1,15 @@
 <template>
   <div class="addAnotherListController">
-    <div class="addAnotherListControllerA" v-show="controller" @click="addListBoxOpen">
+    <div class="addAnotherListControllerA" v-show="controller" @click="addListBoxOpen(this.controller)">
       <a class="addAnotherListInputBox">+ Add another list</a>
     </div>
     <div class="addAnotherListControllerB" v-show="!controller">
       <textarea class="addAnotherListvalue" placeholder="Enter list title..." 
-      v-model="listValue" v-on:keydown.enter.prevent="addNewList"></textarea>
+      v-model="listValue" v-on:keydown.enter.prevent="addNewList(listValue),clearInput()"></textarea>
       <div class="addAnotherlistButtonbox">
         <input type="button" value="Add list" class="addAnotherListbutton"
-               @click="addNewList">
-        <span class="closeAddAnotherListcard" @click="addListBoxClose">
+               @click="addNewList(listValue),clearInput()">
+        <span class="closeAddAnotherListcard" @click="addListBoxClose()">
           <i class="fa-solid fa-xmark closeAddCard"></i>
         </span>
       </div>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 export default {
     name: "AddCardController",
     data() {
@@ -27,22 +28,20 @@ export default {
       }
     },
     methods:{
-      addListBoxOpen(){
+      ...mapMutations({
+        addNewList : 'addNewList'
+      }), 
+      addListBoxOpen() {
         this.controller = !this.controller;
       },
-      addListBoxClose(){
+      addListBoxClose() {
         this.controller = true;
       },
-      addNewList(){
-        if(this.listValue !== ""){
-          this.$emit('addNewListCard',this.listValue);
-          this.clearInput()
-        }
-      },
       clearInput(){
-        this.listValue = ""
+        this.listValue = "";
       }
-    },
+
+    }
 }
 </script>
 

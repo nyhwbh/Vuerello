@@ -53,7 +53,7 @@
         "listCards":[
           {
             "cardTitle" : "청소하기",
-            "cardDetail" : "아침먹기"
+            "cardDetail" : ""
           },
           { "cardTitle" : "점심먹기",
             "cardDetail" : ""
@@ -65,5 +65,9 @@
         ]
       }
     ]
+  },
+  {
+    "boardName" : "test2",
+    "boardLists": []
   }
 ]

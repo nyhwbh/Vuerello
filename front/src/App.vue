@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <div class="board">
-      <ListWrapper :boards="board.boardLists" 
-        v-on:addNewCard="addNewCard"></ListWrapper>
+      <ListWrapper></ListWrapper>
       <div class="addListWrapper">
-          <AddListController v-on:addNewListCard="addAnotherList"></AddListController>
+          <AddListController></AddListController>
       </div>
     </div>
   </div>
@@ -14,30 +13,11 @@
 import AddListController from "./components/VT-AddListController.vue";
 import ListWrapper from "./components/VT-ListWrapper.vue";
 
-import todoData from "./data/todoData.json";
-
 export default {
   name: 'App',
   components: {
     ListWrapper,
     AddListController
-  },
-  data() {
-    return{
-      board:todoData[0]
-    }
-  },
-  methods:{
-    addAnotherList(newList){
-      const newData = {
-        "listTitle": { "title": newList, "titleControl": true, "addCardControl": true },
-        "listCards": []
-      }
-      this.board.boardLists.push(newData)
-    },addNewCard(target, newCard){
-      const newData = { "cardTitle": newCard, "cardDetail": "" }
-      this.board.boardLists[target].listCards.push(newData)
-    }
   }
 }
 </script>
